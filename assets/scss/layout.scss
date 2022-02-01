@@ -1,0 +1,15 @@
+@import 'header';
+@import  'footer';
+$font-stack: Helvetica, sans-serif;
+$primary-color: #1877f2;
+
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    // overflow:hidden;
+}
+

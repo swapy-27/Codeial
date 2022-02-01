@@ -1,20 +1,33 @@
 <header>
-    Page Header
-    <ul>
-        <% if (locals.user){ %>
-            <li><%=user.name%></li>
-            <li>
-                <a href="/user/sign-out">SignOut</a>
-            </li>
+    <div id="site-name">
+        SocialRealm
+   
+    <% if (locals.user){ %>
+    <div class="Home-tags">
+        <li><a href="/">Home</a></li>
+        <li><a href="/user/profile">Profile</a></li>
+    
+    </div>
+    <%}%>
+</div>
+    <div>
+        <ul>
+            <% if (locals.user){ %>
+             
+                <div>
+                    <li>
+                        <a href="/user/sign-out">SignOut</a>
+                    </li>
+                </div>
 
-           
-        <%}else{%>
-        <li>
-            <a href="/user/sign-in">SignIn</a>
-        </li>
-        <li>
-            <a href="/user/sign-up">SignUp</a>
-        </li>
-        <%}%>
-    </ul>
+                <%}else{%>
+                    <li>
+                        <a href="/user/sign-in">SignIn</a>
+                    </li>
+                    <li>
+                        <a href="/user/sign-up">SignUp</a>
+                    </li>
+                    <%}%>
+        </ul>
+    </div>
 </header>

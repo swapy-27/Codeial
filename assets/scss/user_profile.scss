@@ -1,0 +1,60 @@
+section{
+    height: 100%;
+    margin-top: 30px;
+    background-image: radial-gradient(#f3f6fa, #f0f2f5);
+    #profile-section{
+       margin:0 40px 0px 40px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+        .background{
+            border: 1px solid black;
+            border-radius: 20px;
+            background-image: url('../images/Sasuke\ -cover\ pic.jpeg');
+            height: 300px;
+            width: 100%;
+            
+            background-position: center;  
+            background-origin: content-box;
+            background-size: cover;
+        
+        }
+        .about{
+            margin-top: -80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            #profile-pic{
+                background-image: url('../images/sasuke-profile.jpg');
+                height: 200px;
+                width:200px;
+                border:2px solid black;
+                border-radius: 50%;
+                background-origin: content-box;
+                background-size: cover;
+                background-size: contain;
+                box-shadow:0px 0px 4px 2px black;
+                background-position: center; 
+                z-index: 2;
+           
+            }
+            .user-name{
+                margin-top: 10px;
+                font-family :Helvetica, Arial, sans-serif;
+                font-size: larger;
+                font-weight: bolder;
+            }
+            .bio{
+                font-family :Helvetica, Arial, sans-serif;
+            }
+        }
+        
+   }
+
+
+
+
+
+
+}
