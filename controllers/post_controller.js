@@ -1,3 +1,20 @@
+const Post = require('../models/post');
+
 module.exports.post = function(req,res){
-    return res.end('<h1>this is post controller</h1>')
+    console.log(req.body);
+    if(!req.body.content ){
+        console.log('content cant be empty');
+            
+    }
+    else{
+        Post.create({
+            content:req.body.content,
+            user:req.user._id
+             },function(err,post){
+            if(err){
+                console.log('error in saving post')
+            }
+        })
+    }
+    return res.redirect('/');
 }
