@@ -1,0 +1,15 @@
+<div id="display-posts">
+    <h1>display posts here</h1>
+    <% if (locals.user){%>
+        <ul>
+            <% for(post of p) { %>
+                <li>
+                    <%= post.content %>
+                        <small>
+                            <%= post.user.name %>
+                        </small>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
+</div>

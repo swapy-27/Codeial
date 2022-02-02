@@ -1,11 +1,18 @@
 <link rel="stylesheet" type="text/css" href="/css/home.css">
 <section>
     <h1>SocialRealm/home</h1>
-    <section id="feed-post">
+    <% if (locals.user){ %>
+    <div id="feed-post">
         <h4>Posts</h4>
         <form action="/post/create" id="new-post-form" method="post">
-            <textarea name="content" id="" cols="30" rows="3" placeholder="Enter Text..."></textarea>
-            <input type="submit" value="post"/>
+            <textarea name="content" style="resize: none;" id="test-area" cols="30" rows="3" placeholder="Enter Text..."></textarea>
+            <input type="submit" value="post" />
         </form>
-    </section>
+    </div>
+    <% } %>
+
+    <%- include('_posts'); -%>
+   
+   
+
 </section>

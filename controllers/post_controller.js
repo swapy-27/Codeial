@@ -1,10 +1,10 @@
 const Post = require('../models/post');
 
-module.exports.post = function(req,res){
+module.exports.create = function(req,res){
     console.log(req.body);
     if(!req.body.content ){
         console.log('content cant be empty');
-            
+        
     }
     else{
         Post.create({
@@ -13,8 +13,10 @@ module.exports.post = function(req,res){
              },function(err,post){
             if(err){
                 console.log('error in saving post')
+            
             }
         })
     }
-    return res.redirect('/');
+    return res.redirect('back');
 }
+
