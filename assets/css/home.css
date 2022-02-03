@@ -1,3 +1,23 @@
 section {
   margin-top: 45px;
-  height: 100%; }
+  height: 100%;
+  display: flex;
+  align-items: center; }
+  section .col {
+    width: 20vw;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    section .col ul {
+      list-style: none; }
+  section #centre-coloumn {
+    width: 60vw;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    section #centre-coloumn #display-posts li {
+      list-style: none; }

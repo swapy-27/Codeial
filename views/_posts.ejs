@@ -4,10 +4,26 @@
         <ul>
             <% for(post of p) { %>
                 <li>
+                <div>
                     <%= post.content %>
                         <small>
                             <%= post.user.name %>
                         </small>
+                        <% if ((locals.user) && (locals.user.id== post.user.id)){%>
+                        <a href='/post/destroy/<%= post.id %>'>X</a>
+                        <%}%>
+                    </div>
+
+                    <div class = "post-comments">
+                        <form action="/comment/create" method='post'>
+                            <input type="text" name ='content' placeholder="Type here to comment">
+                            <input type="hidden" name='post' value=<%= post._id %>>
+                            <input type="submit" value="Add comment">
+                        </form>
+                    </div>
+
+                    <%- include('_comment.ejs'); -%>
+                   
                 </li>
                 <% } %>
         </ul>

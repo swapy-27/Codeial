@@ -15,7 +15,7 @@ router.use('/user',require('./user'));
 
 router.use('/post',require('./post'));
 
-
+router.use('/comment',require('./comment'));
 
 
 

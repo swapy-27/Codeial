@@ -5,6 +5,15 @@ module.exports.profile = function (req, res) {
         title: "Profile"
     })
 }
+module.exports.freindsProfile = function (req, res) {
+    User.findById(req.params.id,function(err,user){
+        res.render('user_profile', {
+            title: "Profile",
+            user:user
+        })
+    })
+    
+}
 module.exports.signIn = function (req, res) {
     if (req.isAuthenticated()){
         return res.redirect('/user/profile');
@@ -59,7 +68,7 @@ module.exports.createSession = function (req, res) {
 
 module.exports.destroySession = function (req, res) {
     req.logOut();
-    
-    
     return res.redirect('/');
 }
+
+
