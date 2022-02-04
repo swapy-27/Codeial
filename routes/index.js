@@ -1,6 +1,7 @@
+
 const express = require('express');
 
-
+//router helps in distributing tasks likw which link should go to which controller
 const router = express.Router();
 
 const homeController = require('../controllers/home_controller');
@@ -16,12 +17,5 @@ router.use('/user',require('./user'));
 router.use('/post',require('./post'));
 
 router.use('/comment',require('./comment'));
-
-
-
-
-
-
-
 
 module.exports=router;

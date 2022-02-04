@@ -8,11 +8,14 @@ const commentSchema = new mongoose.Schema({
     },
 
     //comment belong to which user
-
+    //one to one mapping
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
+    
+    //comment belongs to which post 
+    //one to one mapping
     post:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Post'
