@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+
 module.exports.profile = function (req, res) {
     User.findById(req.params.id, function (err, user) {
         res.render('user_profile', {
@@ -64,11 +65,14 @@ module.exports.create = async function (req, res) {
 }
 
 module.exports.createSession = function (req, res) {
+    req.flash('sucess','User is Logged in sucessfully');
     return res.redirect('/');
 }
 
 module.exports.destroySession = function (req, res) {
+   
     req.logOut();
+    req.flash('sucess','User is Logged out sucessfully');
     return res.redirect('/');
 }
 
