@@ -1,8 +1,10 @@
-<footer>
-   <div id="company-name">@Naruto-Uzumaki.All Rights Reserved </div>
+<div id="footer-section">
+    <div id="company-name">@Naruto-Uzumaki.All Rights Reserved </div>
     <div id="footer-links">
+        <% if(locals.user){%>
+        
         <a href='/'>Home</a>
         <a href='/user/profile'>Profile</a>
+        <%}%>
     </div>
-
-</footer>
+</div>

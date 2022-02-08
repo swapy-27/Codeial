@@ -1,19 +1,19 @@
-<header>
+<div id="header-section">
     <div id="site-name">
         SocialRealm
-   
-    <% if (locals.user){ %>
-    <div class="Home-tags">
-        <li><a href="/">Home</a></li>
-        <li><a href="/user/profile/<%= user.id %>">Profile</a></li>
-    
+
+        <% if (locals.user){ %>
+            <div class="Home-tags">
+                <li><a href="/">Home</a></li>
+                <li><a href="/user/profile/<%= user.id %>">Profile</a></li>
+
+            </div>
+            <%}%>
     </div>
-    <%}%>
-</div>
     <div>
         <ul>
             <% if (locals.user){ %>
-             
+
                 <div>
                     <li>
                         <a href="/user/sign-out">SignOut</a>
@@ -30,4 +30,4 @@
                     <%}%>
         </ul>
     </div>
-</header>
+</div>

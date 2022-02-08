@@ -1,15 +1,15 @@
-footer{
-    height:70px;
-    width: 100%;
-    position: relative;
-    bottom:0;
+
+#footer-section{
+ 
+    height:100%;
+    width:100%;
     color: #fff;
     font-family :Helvetica, Arial, sans-serif;
     background-color: grey;
     display: flex;
     align-items: center;
     div{
-        margin:0 5px;
+        margin:0 7px;
     }
     #footer-links{
         display: flex;

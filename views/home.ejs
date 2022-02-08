@@ -1,12 +1,10 @@
 <link rel="stylesheet" type="text/css" href="/css/home.css">
 
-<section>
 
+<div id="home-page">
 
-    <div class="col"></div>
+    <div class="col">Hey</div>
     <div id="centre-coloumn">
-       
-      
         <h1>SocialRealm/home</h1>
         <% if (locals.user){ %>
             <div id="feed-post">
@@ -17,16 +15,21 @@
                     <input type="submit" value="post" />
                 </form>
             </div>
-            <% } %>
 
+            <div id="display-posts">
                 <%- include('_posts'); -%>
+            </div>
+            <% } %>
     </div>
     <div class="col">
         <h1>Freinds</h1>
-        <%  if(locals.user){ %>
-        <%- include('_freinds') -%>
-        <%}%>
+        <% if(locals.user){ %>
+            <%- include('_freinds') -%>
+                <%}%>
     </div>
 
+</div>
 
-</section>
+
+
+<script src="/js/home_posts.js"></script>

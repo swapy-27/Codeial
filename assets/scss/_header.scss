@@ -1,17 +1,16 @@
 
-header {
-    position: absolute;
-    top:0;
-    width:100%;
-    // z-index: 2;
-    display: flex;
-    background-color:  #29487d;
-    color: #fff;
-    font-family :Helvetica, Arial, sans-serif;
-    height:45px;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
+    #header-section{
+        height:100%;
+        width:100%;
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        background-color:  #29487d;
+        color: #fff;
+        font-family :Helvetica, Arial, sans-serif;
+        list-style-type:none;
+    }
+
     ul{
         list-style-type: none;
         display: flex;
@@ -42,4 +41,3 @@ header {
         font-weight:normal;
         }
     }
-}

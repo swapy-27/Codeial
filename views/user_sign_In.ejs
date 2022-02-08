@@ -1,8 +1,22 @@
 <link rel="stylesheet" href="/css/user_signin.css">
-<section>
-<form action="/user/create-session" method="post">
-    <input type="email" name="email" placeholder="Enter Email" required>
-    <input type="password" name="password" placeholder="Enter Password" required>
-    <button type="submit">SignIn</button>
-</form>
-</section>
+
+
+<div id="user_signin">
+    <div id="logo-section">
+        <p class="site-name">SocialRealm</p>
+        <p>SocialRealm helps you connect and share with the people in your life.</p>
+        
+    </div>
+
+    <div id="login-section">
+        <form  id="login-form" action="/user/create-session" method="post">
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">SignIn</button>
+        </form>
+        <div>--------------------------------------------------------</div>
+        <div>
+            <button type="submit"> <a href="">Create Account</a></button>
+        </div>
+    </div>
+</div>

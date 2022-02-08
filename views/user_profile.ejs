@@ -1,28 +1,30 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-<section>
-    <div id="profile-section">   
+
+<div id="profile-section">
     <div class="background">
         <!-- <img src="../assets/images/Sasuke -cover pic.jpeg" type="image/avif" alt="Cover-Image"> -->
     </div>
     <div class="about">
         <div id="profile-pic"></div>
-       <div class="user-name"><%= profile_user.name%></div>
-       <div class="bio">Amaterasu uchiha flame control </div>
-       <p><%=profile_user.email%></p>
+        <div class="user-name">
+            <%= profile_user.name%>
+        </div>
+        <div class="bio">Amaterasu uchiha flame control </div>
+        <p>
+            <%=profile_user.email%>
+        </p>
     </div>
     <div class="info">
 
     </div>
     <div class="update-profile">
-        <% if (user.id == profile_user.id){%>
-        
+        <% if (user.id==profile_user.id){%>
+
             <form action="/user/update/<%= profile_user.id%>" method="post">
-                <input type="text" name="name" id="" placeholder="Enter name here.."> 
+                <input type="text" name="name" id="" placeholder="Enter name here..">
                 <input type="submit" value="UpdateName">
             </form>
-        
-        <%}%>
+
+            <%}%>
     </div>
 </div>
-
-</section>
