@@ -5,7 +5,9 @@
         <!-- <img src="../assets/images/Sasuke -cover pic.jpeg" type="image/avif" alt="Cover-Image"> -->
     </div>
     <div class="about">
-        <div id="profile-pic"></div>
+        <div id="profile-pic">
+            <img src=<%= user.avatar%> alt="profile-pic">
+        </div>
         <div class="user-name">
             <%= profile_user.name%>
         </div>
@@ -15,14 +17,18 @@
         </p>
     </div>
     <div class="info">
-
+    
     </div>
     <div class="update-profile">
         <% if (user.id==profile_user.id){%>
 
-            <form action="/user/update/<%= profile_user.id%>" method="post">
+            <form id="update-profile-form" action="/user/update/<%= profile_user.id%>" method="post" enctype="multipart/form-data">
                 <input type="text" name="name" id="" placeholder="Enter name here..">
-                <input type="submit" value="UpdateName">
+                <input type="email" name ="email" id="" placeholder="Enter email here..">
+                 
+                <!-- uploading profile pictures using multer -->
+                <input type="file" name="avatar" />
+                <input type="submit" value="Update">
             </form>
 
             <%}%>

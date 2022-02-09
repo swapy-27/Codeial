@@ -1,16 +1,34 @@
+//using express framework 
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const app = express();
+
+//defining port where application gonna run
 const port = 8000;
+
+//helps in parsing cookies from browser
+const cookieParser = require('cookie-parser');
+
+//using ejs --> embedded javascript 
 const expressLayouts = require('express-ejs-layouts');
-const db = require('./config/mongoose');
+
+
+
+//creating login  session and authentication using passport js
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+
+//setting up mongods database using mongoose
+const db = require('./config/mongoose');
 const   MongoStore =   require('connect-mongodb-session')(session);
+//css styling using scss
 const saasMiddleware = require ('node-sass-middleware');
+
+//flash for notifications
 const  flash = require('connect-flash');
 const customMware = require('./config/middleware')
+
+
 app.use(saasMiddleware(
     {
         src:'./assets/scss',
@@ -24,10 +42,15 @@ app.use(saasMiddleware(
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static('./assets'));
-app.use(expressLayouts);
 
-//extract style and script from sub pages into layout
+//making files globally  available for server to acess
+app.use(express.static('./assets'));
+app.use('/uploads',express.static(__dirname+'/uploads'))
+
+
+
+//extract style and script from sub pages into layout--> concept of layout and partials
+app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true)
 
@@ -35,6 +58,7 @@ app.set('layout extractScripts', true)
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
 
 //mongo store is used too store the session cookie in the database
 app.use(session({
