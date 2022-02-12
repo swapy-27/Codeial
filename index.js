@@ -18,9 +18,14 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+//creating jwt authentication for api calls passport jwt strategy
+const passportJwt =require('./config/passport-jwt-strategy');
+
 //setting up mongods database using mongoose
 const db = require('./config/mongoose');
 const   MongoStore =   require('connect-mongodb-session')(session);
+
+
 //css styling using scss
 const saasMiddleware = require ('node-sass-middleware');
 
@@ -63,7 +68,7 @@ app.set('views', './views');
 //mongo store is used too store the session cookie in the database
 app.use(session({
     name: 'codial',
-    //TODO change the secret before dep;oyment in production mode
+    //TODO change the secret before deployment in production mode
 
     secret: 'blahblah',
     saveUninitialized: false,
