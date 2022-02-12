@@ -21,6 +21,8 @@ const passportLocal = require('./config/passport-local-strategy');
 //creating jwt authentication for api calls passport jwt strategy
 const passportJwt =require('./config/passport-jwt-strategy');
 
+//creating google authentication
+const passportGoogle = require('./config/passport-google-oauth-strategy');
 //setting up mongods database using mongoose
 const db = require('./config/mongoose');
 const   MongoStore =   require('connect-mongodb-session')(session);
