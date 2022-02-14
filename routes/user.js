@@ -14,7 +14,9 @@ router.post('/update/:id',passport.checkAuthentication,userController.update);
 router.get('/sign-in',userController.signIn);
 router.get('/sign-up',userController.signUp);
 
+//authenticating using google
 router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}));
+//catching callback by google api and creating session for user
 router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/user/sign-in'}),userController.createSession)
 
 
