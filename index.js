@@ -11,8 +11,6 @@ const cookieParser = require('cookie-parser');
 //using ejs --> embedded javascript 
 const expressLayouts = require('express-ejs-layouts');
 
-
-
 //creating login  session and authentication using passport js
 const session = require('express-session');
 const passport = require('passport');
@@ -23,6 +21,7 @@ const passportJwt =require('./config/passport-jwt-strategy');
 
 //creating google authentication
 const passportGoogle = require('./config/passport-google-oauth-strategy');
+
 //setting up mongods database using mongoose
 const db = require('./config/mongoose');
 const   MongoStore =   require('connect-mongodb-session')(session);
