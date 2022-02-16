@@ -30,7 +30,11 @@ const userSchema = new mongoose.Schema(
         },
         avatar:{
             type:String,
-        }
+        },
+        friends:[{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Friends'
+        }]
 
     }, {
     timestamps: true
@@ -54,11 +58,6 @@ userSchema.statics.uploadedAvatar=multer({
 }).single('avatar');
 
 userSchema.statics.avatarPath=AVATAR_PATH;
-
-
-
-
-
 
 
 

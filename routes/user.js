@@ -16,7 +16,6 @@ router.get('/sign-up',userController.signUp);
 
 
 
-
 //use passport as a middleware
 router.post('/create-session',passport.authenticate(
     'local',
