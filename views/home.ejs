@@ -3,7 +3,12 @@
 
 <div id="home-page">
 
-    <div class="col">Hey</div>
+    <div class="col">
+        <h1>Friends</h1>
+        <% if(locals.user){ %>
+            <%- include('_friends') -%>
+                <%}%>
+    </div>
     <div id="centre-coloumn">
         <h1>SocialRealm/home</h1>
         <% if (locals.user){ %>
@@ -22,9 +27,9 @@
             <% } %>
     </div>
     <div class="col">
-        <h1>Freinds</h1>
+        <h1>Users</h1>
         <% if(locals.user){ %>
-            <%- include('_freinds') -%>
+            <%- include('_users') -%>
                 <%}%>
     </div>
 
