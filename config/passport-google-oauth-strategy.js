@@ -6,8 +6,8 @@ const { userInfo } = require('os');
 
 //tell passort to use a new strategy for google login
 passport.use(new googleStrategy({
-    clientID: '903157306705-d4aomrm9kn1v0uoh4oo3c0smk4b5bl8j.apps.googleusercontent.com',
-    clientSecret: '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',
+    clientID: 'add these ids before using google auth',
+    clientSecret: 'add these ids before using google auth',
     //if google verifies u it will  call ur server at this route
     callbackURL: 'http://localhost:8000/user/auth/google/callback'
 },
