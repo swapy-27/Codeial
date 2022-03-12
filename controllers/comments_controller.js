@@ -5,8 +5,8 @@ const commentMailer = require('../mailers/comment_mailer');
 
 
 module.exports.create = async function (req, res) {
+    console.log(req.body)
     let post = await Post.findById(req.body.post);
-
     if (post) {
         let comment = await Comment.create({
             content: req.body.content,
@@ -15,6 +15,7 @@ module.exports.create = async function (req, res) {
         });
         post.comments.push(comment);
         post.save();
+
        
        let newcomment = await Comment.findById(comment._id).populate('user','name email');
      
@@ -27,10 +28,15 @@ module.exports.create = async function (req, res) {
         //     console.log(job.id);
         // })
 
+
+        // let username= req.
+
         if(req.xhr){
             return res.status(200).json({
                 data:{
-                    comment:comment
+                    comment:comment,
+                    post:post,
+                    userName:req.user.name
                 },
                 message:"Comment Done!"
             })
@@ -48,9 +54,9 @@ module.exports.destroy = async function (req, res) {
         if (comment.user == req.user.id) {
 
             let postId = comment.post;
-            console.log(postId);
             comment.remove();
 
+          
             await Post.findByIdAndUpdate(postId, { $pull: { comments: req.params.id } });
             return res.redirect('back');
         }

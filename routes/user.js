@@ -19,7 +19,6 @@ router.get('/auth/google',passport.authenticate('google',{scope:['profile','emai
 //catching callback by google api and creating session for user
 router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/user/sign-in'}),userController.createSession)
 
-
 //use passport as a middleware
 router.post('/create-session',passport.authenticate(
     'local',

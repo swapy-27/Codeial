@@ -1,10 +1,9 @@
-<div class="post-comments-list">
-    <ul id="post-comments-<%= post._id%>">
+<!-- <div class="post-comments-list"> -->
+  
         <% for (comment of post.comments ) {%>
 
             <p>
                 <%= comment.content %>
-                <br>
                 <small>
                     <%= comment.user.name%>
                 </small>
@@ -16,5 +15,5 @@
 
         <% }%>
     
-    </ul>
-</div>
+   
+<!-- </div> -->

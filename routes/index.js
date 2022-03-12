@@ -19,6 +19,11 @@ router.use('/post',require('./post'));
 router.use('/comment',require('./comment'));
 
 
+router.use('/likes',require('./likes'))
+
+router.use('/friends',require('./friends'))
+
+
 router.use('/api',require('./api'))
 
 

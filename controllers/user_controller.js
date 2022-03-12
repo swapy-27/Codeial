@@ -2,13 +2,16 @@ const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
 
-module.exports.profile = function (req, res) {
-    User.findById(req.params.id, function (err, user) {
-        res.render('user_profile', {
+module.exports.profile = async function (req, res) {
+   try{ let user = await User.findById(req.params.id)
+       
+        return res.render('user_profile', {
             title: "Profile",
             profile_user: user
         })
-    })
+   }catch(err){
+       console.log(err)
+   }
 }
 
 
@@ -77,7 +80,7 @@ module.exports.signUp = function (req, res) {
 
 //get the signUp data
 module.exports.create = async function (req, res) {
-
+try{
     if (req.body.password != req.body.confirm_password) {
         return res.redirect('back');
     }
@@ -96,7 +99,10 @@ module.exports.create = async function (req, res) {
     }
 
     return res.redirect('back');
-
+}catch(err){
+    console.log(err);
+    return;
+}
 }
 
 module.exports.createSession = function (req, res) {
